@@ -142,11 +142,11 @@ int main(int argc, char** argv)
         cout << e.what() << endl;
     }
 
-       //  Agregar conidición para solo imprimir linea si se da más de una imagen como parametro
-            //  Condición si no es la ultima imagen a procesar
+       //  Agregar conidición para solo imprimir linea si se da más de una imagen como parametro MOD4
+            //  Condición si no es la ultima imagen a procesar MOD4
             if (argc - i != 1)
             {
-                // Imprimir linea para diferenciar procesamiento de cada imagen
+                // Imprimir linea para diferenciar procesamiento de cada imagen MOD4
                 for (int z = 0; z < 70; z++)
                 {
                     cout << "-";
