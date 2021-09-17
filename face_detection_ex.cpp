@@ -141,6 +141,33 @@ int main(int argc, char** argv)
         cout << "\nexception thrown!" << endl;
         cout << e.what() << endl;
     }
+
+       //  Agregar conidición para solo imprimir linea si se da más de una imagen como parametro
+            //  Condición si no es la ultima imagen a procesar
+            if (argc - i != 1)
+            {
+                // Imprimir linea para diferenciar procesamiento de cada imagen
+                for (int z = 0; z < 70; z++)
+                {
+                    cout << "-";
+                }
+                // Continuar
+                cout << "\nPresiona enter para continuar con la siguiente imagen..." << endl;
+            }
+            // Ultima imagen
+            else   
+            {
+                // Finalizar
+                cout << "Presione enter para finalizar..." << endl;
+            }
+            cin.get();
+        }
+    }
+    catch (exception& e)
+    {
+        cout << "\nexception thrown!" << endl;
+        cout << e.what() << endl;
+    }
 }
 
 // ----------------------------------------------------------------------------------------
