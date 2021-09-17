@@ -45,12 +45,12 @@ using namespace dlib;
 using namespace std;
 
 /*
-    MODIFICADO POR EL EQUIPO:
-    Cada modificación atiende a las dictadas en las diapositivas.
+    CÓDIGO MODIFICADO POR EL EQUIPO:
+    (Cada modificación atiende a las dictadas en las diapositivas)
         León García - MOD1
         Jesús Palomino - MOD2
-        Alexis Sahagun - MOD
         Diego Martínez - MOD3
+        Alexis Sahagun - MOD4
 */
 
 // ----------------------------------------------------------------------------------------
