@@ -118,6 +118,7 @@ int main(int argc, char** argv)
                 j++;
             }
 
+           // Imprimir el numero total de caras detectadas - MOD3
             cout << "Number of faces detected: " << dets.size() << endl;
             
             // Now we show the image on the screen and the face detections as
@@ -128,6 +129,7 @@ int main(int argc, char** argv)
             // Set de Imagen original para mantener color - MOD1
             
             win.set_image(img_rgb);
+            // Set de color a borde a verde - MOD3
             win.add_overlay(dets, rgb_pixel(255,0,0));
 
             cout << "Hit enter to process the next image..." << endl;
