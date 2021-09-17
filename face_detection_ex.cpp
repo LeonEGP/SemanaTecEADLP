@@ -36,7 +36,6 @@
     2011.  SSE4 is the next fastest and is supported by most current machines.  
 */
 
-
 #include <dlib/image_processing/frontal_face_detector.h>
 #include <dlib/gui_widgets.h>
 #include <dlib/image_io.h>
@@ -44,6 +43,14 @@
 
 using namespace dlib;
 using namespace std;
+
+/*
+    MODIFICADO POR:
+        León García - MOD1
+        Jesús Palomino - MOD2
+        Alexis Sahagun - MOD
+        Diego Martínez - MOD
+*/
 
 // ----------------------------------------------------------------------------------------
 
@@ -63,9 +70,20 @@ int main(int argc, char** argv)
         // Loop over all the images provided on the command line.
         for (int i = 1; i < argc; ++i)
         {
-            cout << "processing image " << argv[i] << endl;
+            //  Imprimir el nombre de la Imagen que se está procesando - MOD1
+            cout << "\nProcesando imagen " << argv[i] << endl;
+            cout << endl;
+            
+            //  Array de usigned char para guardar contenido de Imagen a procesar - MOD1
             array2d<unsigned char> img;
+            
+            //  Array de pixeles de color para mantener la Imagen a color - MOD1
+            array2d<rgb_pixel> img_rgb;
+
+            //  Mantener Imagen original, ya que al ser procesada es cambiada a blanco y negro - MOD1
             load_image(img, argv[i]);
+            load_image(img_rgb, argv[i]);
+
             // Make the image bigger by a factor of two.  This is useful since
             // the face detector looks for faces that are about 80 by 80 pixels
             // or larger.  Therefore, if you want to find faces that are smaller
@@ -75,17 +93,25 @@ int main(int argc, char** argv)
             // again to find even smaller faces, but note that every time we
             // upsample the image we make the detector run slower since it must
             // process a larger image.
+            
             pyramid_up(img);
+            pyramid_up(img_rgb);
 
             // Now tell the face detector to give us a list of bounding boxes
             // around all the faces it can find in the image.
+            
             std::vector<rectangle> dets = detector(img);
 
             cout << "Number of faces detected: " << dets.size() << endl;
+            
             // Now we show the image on the screen and the face detections as
             // red overlay boxes.
+            
             win.clear_overlay();
-            win.set_image(img);
+            
+            // Set de Imagen original para mantener color - MOD1
+            
+            win.set_image(img_rgb);
             win.add_overlay(dets, rgb_pixel(255,0,0));
 
             cout << "Hit enter to process the next image..." << endl;
@@ -100,4 +126,3 @@ int main(int argc, char** argv)
 }
 
 // ----------------------------------------------------------------------------------------
-
