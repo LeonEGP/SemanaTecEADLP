@@ -45,7 +45,7 @@ using namespace dlib;
 using namespace std;
 
 /*
-    MODIFICADO POR:
+    MODIFICADO POR EL EQUIPO:
         León García - MOD1
         Jesús Palomino - MOD2
         Alexis Sahagun - MOD
