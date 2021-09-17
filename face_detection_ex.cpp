@@ -46,6 +46,7 @@ using namespace std;
 
 /*
     MODIFICADO POR EL EQUIPO:
+    Cada modificación atiende a las dictadas en las diapositivas.
         León García - MOD1
         Jesús Palomino - MOD2
         Alexis Sahagun - MOD
@@ -102,15 +103,18 @@ int main(int argc, char** argv)
             
             std::vector<rectangle> dets = detector(img);
             
-            // Imprimir coordenadas de limites en ejes x y y de bordes en donde se detectaron caras
+            // Imprimir coordenadas de limites en ejes x y y de bordes en donde se detectaron caras - MOD2
             int j = 1;
-            // Pasar por cada rectangle dentro de dets
+            
+            // Pasar por cada rectangle dentro de dets - MOD2
             for (rectangle rec : dets)
             {
-                //  Numero de cara detectada
+                //  Numero de cara detectada - MOD2
                 cout << "Cara " << j << " detectada: ";
-                // Output de coordenada con su lado correspondiente
+                
+                // Output de coordenada con su lado correspondiente -MOD2
                 cout << "Top: " << rec.top() << "\tLeft: " << rec.left() << "\tBottom: " << rec.bottom() << "\tRight: " << rec.right() << endl;
+                
                 j++;
             }
 
