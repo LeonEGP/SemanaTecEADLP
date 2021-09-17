@@ -101,6 +101,18 @@ int main(int argc, char** argv)
             // around all the faces it can find in the image.
             
             std::vector<rectangle> dets = detector(img);
+            
+            // Imprimir coordenadas de limites en ejes x y y de bordes en donde se detectaron caras
+            int j = 1;
+            // Pasar por cada rectangle dentro de dets
+            for (rectangle rec : dets)
+            {
+                //  Numero de cara detectada
+                cout << "Cara " << j << " detectada: ";
+                // Output de coordenada con su lado correspondiente
+                cout << "Top: " << rec.top() << "\tLeft: " << rec.left() << "\tBottom: " << rec.bottom() << "\tRight: " << rec.right() << endl;
+                j++;
+            }
 
             cout << "Number of faces detected: " << dets.size() << endl;
             
