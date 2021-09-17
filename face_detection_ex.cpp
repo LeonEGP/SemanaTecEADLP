@@ -50,7 +50,7 @@ using namespace std;
         León García - MOD1
         Jesús Palomino - MOD2
         Alexis Sahagun - MOD
-        Diego Martínez - MOD
+        Diego Martínez - MOD3
 */
 
 // ----------------------------------------------------------------------------------------
